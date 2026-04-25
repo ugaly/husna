@@ -276,7 +276,7 @@
     <div class="card-header">
       <p class="tag"><span class="tag-dot"></span>Personal Business Card</p>
       <h1 class="name">Husna<br>Mohamed</h1>
-      <p class="role">Business Professional</p>
+      <p class="role">Managing Director</p>
     </div>
 
     <div class="profile-row">
@@ -297,15 +297,15 @@
       <div class="contacts">
         <a href="tel:+25575471170" class="contact-item">
           <span class="c-icon ic-phone"><i data-lucide="phone"></i></span>
-          <span><span class="c-label">+255 754 711 70</span><span class="c-sub">Phone</span></span>
+          <span><span class="c-label">+255 754 711 170</span><span class="c-sub">Phone</span></span>
         </a>
         <a href="https://wa.me/25575471170" class="contact-item" target="_blank" rel="noopener noreferrer">
           <span class="c-icon ic-whatsapp"><i data-lucide="message-circle"></i></span>
-          <span><span class="c-label">+255 754 711 70</span><span class="c-sub">WhatsApp</span></span>
+          <span><span class="c-label">+255 754 711 170</span><span class="c-sub">WhatsApp</span></span>
         </a>
-        <a href="mailto:husna.mohamed@gmail.com" class="contact-item">
+        <a href="mailto:husnamabroucky@gmail.com" class="contact-item">
           <span class="c-icon ic-mail"><i data-lucide="mail"></i></span>
-          <span><span class="c-label">husna.mohamed@gmail.com</span><span class="c-sub">Email</span></span>
+          <span><span class="c-label">husnamabroucky@gmail.com</span><span class="c-sub">Email</span></span>
         </a>
         <a href="https://www.linkedin.com/in/husna-mabroucky-mohamed-229985a8/" target="_blank" rel="noopener noreferrer" class="contact-item">
           <span class="c-icon ic-linkedin"><i data-lucide="linkedin"></i></span>
@@ -347,7 +347,7 @@
       tip._t = setTimeout(() => { tip.style.display = "none"; }, 3200);
     }
 
-    
+
     document.getElementById("btn-save").addEventListener("click", () => {
       const vcf = `BEGIN:VCARD\nVERSION:3.0\nFN:${contact.fullName}\nN:Mohamed;Husna;;;\nORG:${contact.company}\nTITLE:${contact.title}\nTEL;TYPE=CELL:${contact.phone}\nEMAIL;TYPE=WORK:${contact.email}\nURL:https://wa.me/25575471170\nURL:${contact.linkedin}\nEND:VCARD`;
       const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
