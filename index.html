@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Husna Mohamed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      background: #F4F1EC;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 12px 40px rgba(0,0,0,0.08);
+      animation: rise 0.5s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-header {
+      background: #1A1A2E;
+      padding: 36px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .card-header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 22px;
+    }
+
+    .tag-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #A78BFA;
+    }
+
+    .name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .role {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+
+    .profile-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 28px;
+      margin-top: -36px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 68px; height: 68px;
+      border-radius: 18px;
+      background: #EEE9FF;
+      border: 4px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #6D28D9;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .company-badge {
+      background: #F4F1EC;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: #555;
+      letter-spacing: 0.02em;
+    }
+
+    .body {
+      padding: 0 28px 24px;
+    }
+
+    .company-block {
+      margin-bottom: 20px;
+    }
+
+    .company-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 2px;
+    }
+
+    .company-desc {
+      font-size: 12.5px;
+      color: #999;
+      font-weight: 300;
+    }
+
+    .focus {
+      background: #F8F6FF;
+      border-left: 3px solid #A78BFA;
+      border-radius: 0 10px 10px 0;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      font-size: 12.5px;
+      color: #6D5A9C;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 12px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .contact-item:hover { background: #F8F7FB; }
+
+    .c-icon {
+      width: 38px; height: 38px;
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .c-icon svg { width: 16px; height: 16px; }
+
+    .ic-phone    { background: #FFF3E0; color: #E07020; }
+    .ic-whatsapp { background: #E8F8EE; color: #22A857; }
+    .ic-mail     { background: #EEE9FF; color: #7C3AED; }
+    .ic-linkedin { background: #E6F2FB; color: #0A66C2; }
+
+    .c-label {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #1A1A2E;
+      display: block;
+    }
+    .c-sub {
+      font-size: 11px;
+      color: #bbb;
+      display: block;
+      margin-top: 1px;
+    }
+
+    .rule {
+      height: 1px;
+      background: #F0EEF8;
+      margin-bottom: 20px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn {
+      font-family: "Outfit", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 13px;
+      border-radius: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.16s;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-dark {
+      background: #1A1A2E;
+      color: #fff;
+    }
+    .btn-dark:hover { background: #2D2D4E; }
+
+    .btn-outline {
+      background: transparent;
+      color: #1A1A2E;
+      border: 1.5px solid #E2DFF0;
+    }
+    .btn-outline:hover { background: #F8F7FB; }
+
+    #tip {
+      display: none;
+      padding: 9px 14px;
+      background: #F8F6FF;
+      border: 1px solid #DDD8F5;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #7C3AED;
+      text-align: center;
+      grid-column: 1 / -1;
+      margin-top: 4px;
+    }
+
+    .card-footer {
+      padding: 16px 28px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-top: 1px solid #F0EEF8;
+    }
+
+    .footer-dot { width: 4px; height: 4px; border-radius: 50%; background: #D4CFEA; }
+    .footer-text { font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #C8C3DE; font-weight: 400; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <p class="tag"><span class="tag-dot"></span>Personal Business Card</p>
+      <h1 class="name">Husna<br>Mohamed</h1>
+      <p class="role">Business Professional</p>
+    </div>
+
+    <div class="profile-row">
+      <div class="avatar">HM</div>
+      <div class="company-badge">OneTech Solutions</div>
+    </div>
+
+    <div class="body">
+      <div class="company-block">
+        <p class="company-name">OneTech Solutions</p>
+        <p class="company-desc">Modern &amp; reliable business support</p>
+      </div>
+
+      <div class="focus">
+        Digital solutions, client support, and business growth services.
+      </div>
+
+      <div class="contacts">
+        <a href="tel:+25575471170" class="contact-item">
+          <span class="c-icon ic-phone"><i data-lucide="phone"></i></span>
+          <span><span class="c-label">+255 754 711 70</span><span class="c-sub">Phone</span></span>
+        </a>
+        <a href="https://wa.me/25575471170" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <span class="c-icon ic-whatsapp"><i data-lucide="message-circle"></i></span>
+          <span><span class="c-label">+255 754 711 70</span><span class="c-sub">WhatsApp</span></span>
+        </a>
+        <a href="mailto:husna.mohamed@gmail.com" class="contact-item">
+          <span class="c-icon ic-mail"><i data-lucide="mail"></i></span>
+          <span><span class="c-label">husna.mohamed@gmail.com</span><span class="c-sub">Email</span></span>
+        </a>
+        <a href="https://www.linkedin.com/in/husna-mabroucky-mohamed-229985a8/" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="c-icon ic-linkedin"><i data-lucide="linkedin"></i></span>
+          <span><span class="c-label">LinkedIn Profile</span><span class="c-sub">Connect professionally</span></span>
+        </a>
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="actions">
+        <button class="btn btn-dark" id="btn-save">Save Contact</button>
+        <button class="btn btn-outline" id="btn-share">Share Card</button>
+        <p id="tip"></p>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="footer-dot"></div>
+      <span class="footer-text">OneTech Solutions</span>
+      <div class="footer-dot"></div>
+    </div>
+  </div>
+
+  <script>
+    const contact = {
+      fullName: "Husna Mohamed",
+      company: "OneTech Solutions",
+      title: "Business Professional",
+      phone: "+25575471170",
+      email: "husna.mohamed@gmail.com",
+      linkedin: "https://www.linkedin.com/in/husna-mabroucky-mohamed-229985a8/"
+    };
+
+    function showTip(msg) {
+      const tip = document.getElementById("tip");
+      tip.textContent = msg;
+      tip.style.display = "block";
+      clearTimeout(tip._t);
+      tip._t = setTimeout(() => { tip.style.display = "none"; }, 3200);
+    }
+
+    document.getElementById("btn-save").addEventListener("click", () => {
+      const vcf = `BEGIN:VCARD\nVERSION:3.0\nFN:${contact.fullName}\nN:Mohamed;Husna;;;\nORG:${contact.company}\nTITLE:${contact.title}\nTEL;TYPE=CELL:${contact.phone}\nEMAIL;TYPE=WORK:${contact.email}\nURL:https://wa.me/25575471170\nURL:${contact.linkedin}\nEND:VCARD`;
+      const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Husna_Mohamed.vcf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+      showTip("Contact saved to your device.");
+    });
+
+    document.getElementById("btn-share").addEventListener("click", async () => {
+      const data = { title: contact.fullName, text: `${contact.fullName} · ${contact.company}`, url: window.location.href };
+      if (navigator.share) {
+        try { await navigator.share(data); } catch (_) {}
+      } else {
+        try { await navigator.clipboard.writeText(window.location.href); showTip("Link copied to clipboard."); }
+        catch (_) { showTip("Unable to copy on this browser."); }
+      }
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Options -MultiViews
+RewriteEngine On
+
+# Serve existing files as-is
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
