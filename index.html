@@ -347,6 +347,7 @@
       tip._t = setTimeout(() => { tip.style.display = "none"; }, 3200);
     }
 
+    
     document.getElementById("btn-save").addEventListener("click", () => {
       const vcf = `BEGIN:VCARD\nVERSION:3.0\nFN:${contact.fullName}\nN:Mohamed;Husna;;;\nORG:${contact.company}\nTITLE:${contact.title}\nTEL;TYPE=CELL:${contact.phone}\nEMAIL;TYPE=WORK:${contact.email}\nURL:https://wa.me/25575471170\nURL:${contact.linkedin}\nEND:VCARD`;
       const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
